@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> editMe! - jQuery Plugin Demo </title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="jquery.editme.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('#editme1').editme();
+		$('#editme2').editme({fluid:true});
+		$('#editme3').editme({type:'textarea'});
+		$('#editme4').editme({fluid:true,type:'textarea'});
+		$('#editme5').editme({fluid:true,onSave:function(o, otxt, ntxt){
+			$('#result').html("Old text:<br>" + otxt + '<br>New text:<br>' + ntxt);
+		}});
+	});
+  </script>
+	<style type="text/css">
+	div:hover {
+		background-color:#ffff00;
+	}
+	</style>
+ </head>
+
+ <body>
+<h2>Example 1 - Textbox</h2>
+<div id="editme1">Edit me!</div>
+<h2>Example 2 - Textbox with fluid</h2>
+<div id="editme2">Edit me!</div>
+<h2>Example 3 - Textarea</h2>
+<div id="editme3">Edit me!</div>
+<h2>Example 4 - Textarea with fluid</h2>
+<div id="editme4">Edit me!</div>
+<h2>Example 5 - Textbox with fluid and callback</h2>
+<div id="editme5">Edit me!</div>
+<div id="result"></div>
+ </body>
+</html>
